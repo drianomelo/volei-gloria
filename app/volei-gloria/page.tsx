@@ -13,7 +13,7 @@ export default function Home() {
           <span>Domine a quadra.</span>
           <span>
             Voe com o{" "}
-            <span className="bg-gradient-to-r from-[#277f4a] to-[#ffd21f] bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-[#277f4a] to-[#ffd21f] bg-clip-text text-transparent">
               Vôlei Glória.
             </span>
           </span>
