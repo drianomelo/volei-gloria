@@ -3,6 +3,7 @@
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 interface NavItem {
@@ -20,6 +21,10 @@ const navItems: NavItem[] = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const pathname = usePathname();
+  const isVoleiGloria = pathname.startsWith("/volei-gloria");
+  const isProjeto = pathname.startsWith("/saltando-para-o-futuro");
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -41,12 +46,14 @@ export default function Header() {
         <div className="flex items-center gap-5 relative" ref={dropdownRef}>
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/logo-verde.png"
+              src={isVoleiGloria ? "/logo-verde.png" : "/logo-projeto.png"}
               alt="Logo do time Vôlei Glória"
               width={50}
               height={100}
             />
-            <span className="text-2xl font-medium">Vôlei Glória</span>
+            <span className="text-2xl font-medium">
+              {isVoleiGloria ? "Vôlei Glória" : "Saltando para o Futuro"}
+            </span>
           </Link>
 
           <button
@@ -60,39 +67,71 @@ export default function Header() {
           </button>
 
           {open && (
-            <div className="absolute top-14 w-full p-2.5 space-y-2 bg-white/80 rounded-sm border border-slate-950/15 flex flex-col">
+            <div className="absolute top-14 w-full p-2.5 space-y-2 bg-white/80 rounded-sm border border-slate-950/10 flex flex-col">
               <Link
                 href="/volei-gloria"
-                className="px-4 py-2 flex items-center font-semibold gap-3 bg-emerald-100 rounded-sm"
+                className={`px-4 py-2 flex items-center font-semibold gap-3 rounded-sm ${
+                  isVoleiGloria ? "bg-emerald-100/80" : "bg-transparent"
+                }`}
               >
-                <div className="w-3.5 h-3.5 rounded-full border border-emerald-400 p-0.5">
-                  <div className="bg-emerald-400 w-full h-full rounded-full"></div>
+                <div
+                  className={`w-3.5 h-3.5 rounded-full border ${
+                    isVoleiGloria ? "border-emerald-400" : "border-black/20"
+                  } p-0.5`}
+                >
+                  <div
+                    className={`w-full h-full rounded-full ${
+                      isVoleiGloria ? "bg-emerald-400" : ""
+                    }`}
+                  ></div>
                 </div>
 
-                <div className="flex items-center gap-1.5 text-slate-950">
+                <div
+                  className={`flex items-center gap-2 ${
+                    isVoleiGloria ? "text-slate-950" : "text-slate-950/50"
+                  }`}
+                >
                   <Image
                     src="/logo-verde.png"
                     alt="Logo do time Vôlei Glória"
                     width={35}
                     height={100}
+                    className={`${
+                      isVoleiGloria ? "grayscale-0" : "grayscale-100"
+                    }`}
                   />
                   Vôlei Glória
                 </div>
               </Link>
               <Link
                 href="/saltando-para-o-futuro"
-                className="px-4 py-2 flex items-center font-semibold gap-3 bg-emerald-100 rounded-sm"
+                className={`px-4 py-2 flex items-center font-semibold gap-3 rounded-sm ${
+                  isProjeto ? "bg-yellow-100/80" : "bg-transparent"
+                }`}
               >
-                <div className="w-3.5 h-3.5 rounded-full border border-emerald-400 p-0.5">
-                  <div className="bg-emerald-400 w-full h-full rounded-full"></div>
+                <div
+                  className={`w-3.5 h-3.5 rounded-full border ${
+                    isProjeto ? "border-yellow-400" : "border-black/20"
+                  } p-0.5`}
+                >
+                  <div
+                    className={`w-full h-full rounded-full ${
+                      isProjeto ? "bg-yellow-400" : ""
+                    }`}
+                  ></div>
                 </div>
 
-                <div className="flex items-center gap-1.5 text-slate-950">
+                <div
+                  className={`flex items-center gap-2 ${
+                    isProjeto ? "text-slate-950" : "text-slate-950/50"
+                  }`}
+                >
                   <Image
-                    src="/logo-verde.png"
+                    src="/logo-projeto.png"
                     alt="Logo do time Vôlei Glória"
                     width={35}
                     height={100}
+                    className={`${isProjeto ? "grayscale-0" : "grayscale-100"}`}
                   />
                   Projeto
                 </div>
