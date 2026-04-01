@@ -1,14 +1,19 @@
 import Carousel from "@/components/Carousel";
 import Header from "@/components/Header";
-import { ArrowRight, Star, Trophy, Volleyball } from "lucide-react";
+import {
+  ArrowRight,
+  BrainCircuit,
+  ShieldCheck,
+  Volleyball,
+} from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative">
       <Header />
 
-      <div className="container mx-auto pt-20 mb-4">
+      <div className="container mx-auto pt-20 mb-0">
         <h1 className="text-7xl flex flex-col gap-2 mb-10 font-medium">
           <span>Domine a quadra.</span>
           <span>
@@ -39,12 +44,19 @@ export default function Home() {
         />
 
         <div className="container mx-auto flex flex-col justify-end items-end">
-          <h2 className="text-white w-175 text-6xl leading-[1.2] mb-40">
-            Desde 2020, desenvolvendo talentos{" "}
-            <span className="opacity-50">dentro e fora da quadra.</span>
+          <h2 className="text-white w-210 text-6xl leading-[1.2] mb-40">
+            Para quem busca a vitória, o{" "}
+            <span className="bg-linear-to-r from-[#277f4a] to-[#ffd21f] bg-clip-text text-transparent">
+              detalhe técnico
+            </span>{" "}
+            e a{" "}
+            <span className="bg-linear-to-r from-[#277f4a] to-[#ffd21f] bg-clip-text text-transparent">
+              preparação profissional
+            </span>{" "}
+            fazem toda a diferença.
           </h2>
 
-          <div className="flex w-175 gap-10">
+          <div className="flex w-210 gap-10">
             <div className="flex flex-col flex-1">
               <div className="border border-white/10 w-18 h-18 rounded-full flex items-center justify-center">
                 <svg width="26" height="26" viewBox="0 0 24 24">
@@ -59,10 +71,10 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-white text-xl font-medium mt-4.5 mb-1.5">
-                Equipe Masculina
+                DNA Competitivo
               </h3>
               <p className="text-white/50">
-                Performance, disciplina e evolução constante.
+                Treinamentos de nível profissional focados em tática avançada.
               </p>
             </div>
 
@@ -76,14 +88,14 @@ export default function Home() {
                     </linearGradient>
                   </defs>
 
-                  <Star stroke="url(#grad)" />
+                  <ShieldCheck stroke="url(#grad)" />
                 </svg>
               </div>
               <h3 className="text-white text-xl font-medium mt-4.5 mb-1.5">
-                Equipe Feminina
+                Fisiologia e Saúde
               </h3>
               <p className="text-white/50">
-                Talento, técnica e força coletiva.
+                Suporte completo em preparação física e prevenção de lesões.
               </p>
             </div>
 
@@ -97,14 +109,14 @@ export default function Home() {
                     </linearGradient>
                   </defs>
 
-                  <Trophy stroke="url(#grad)" />
+                  <BrainCircuit stroke="url(#grad)" />
                 </svg>
               </div>
               <h3 className="text-white text-xl font-medium mt-4.5 mb-1.5">
-                Adulto Masculino
+                Foco e Disciplina
               </h3>
               <p className="text-white/50">
-                Experiência aplicada ao alto rendimento.
+                Desenvolvimento da mentalidade de campeão.
               </p>
             </div>
           </div>
