@@ -67,7 +67,7 @@ export default function Home() {
                     </linearGradient>
                   </defs>
 
-                  <Volleyball stroke="url(#grad)" />
+                  <Volleyball stroke="url(#grad)" strokeWidth={1.5} />
                 </svg>
               </div>
               <h3 className="text-white text-xl font-medium mt-4.5 mb-1.5">
@@ -88,7 +88,7 @@ export default function Home() {
                     </linearGradient>
                   </defs>
 
-                  <ShieldCheck stroke="url(#grad)" />
+                  <ShieldCheck stroke="url(#grad)" strokeWidth={1.5} />
                 </svg>
               </div>
               <h3 className="text-white text-xl font-medium mt-4.5 mb-1.5">
@@ -109,7 +109,7 @@ export default function Home() {
                     </linearGradient>
                   </defs>
 
-                  <BrainCircuit stroke="url(#grad)" />
+                  <BrainCircuit stroke="url(#grad)" strokeWidth={1.5} />
                 </svg>
               </div>
               <h3 className="text-white text-xl font-medium mt-4.5 mb-1.5">
